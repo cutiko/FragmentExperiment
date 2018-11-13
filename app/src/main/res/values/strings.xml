@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentExperiment</string>
+    <string name="action_settings">Settings</string>
+    <string name="unknown_id">Unknown Id</string>
+</resources>
