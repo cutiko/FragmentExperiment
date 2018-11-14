@@ -1,14 +1,14 @@
 package cl.cutiko.fragmentexperiment;
 
+import android.os.Bundle;
+import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 
 
 public class MainActivityFragment extends Fragment {
@@ -22,10 +22,11 @@ public class MainActivityFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
+    @CallSuper
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ViewIterator.printStart("onViewCreated");
+        ViewIterator.printStart("onViewCreated " + getClass().getSimpleName());
         ViewIterator.viewInfo(view, getContext());
     }
 
@@ -33,7 +34,7 @@ public class MainActivityFragment extends Fragment {
     public void onStart() {
         super.onStart();
         ViewGroup viewGroup = (ViewGroup) getView();
-        ViewIterator.printStart("onStart");
+        ViewIterator.printStart("onStart " + getClass().getSimpleName());
         ViewIterator.viewInfo(viewGroup, getContext());
         ViewIterator.traverseChilds(viewGroup);
         ViewGroup rootFragment = getView().findViewById(R.id.rootFragment);
